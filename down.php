@@ -254,7 +254,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['access_password'])) {
         margin-bottom: 10px;
         text-shadow: 0 0 5px var(--matrix-green);
     }
-    input[type=text], input[type=password] {
+    input[type=text], input[type=password], input[type=url] {
         background: #0d0d0d;
         border: 1px solid var(--matrix-green);
         color: var(--matrix-green);
@@ -267,10 +267,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['access_password'])) {
         outline: none;
         transition: box-shadow 0.3s ease;
     }
-    input[type=text]:focus, input[type=password]:focus {
+    input[type=text]:focus, input[type=password]:focus, input[type=url]:focus {
         box-shadow: var(--border-glow);
     }
-    input[type=text].error {
+    input[type=text].error, input[type=url].error {
         border-color: #ff4141;
         box-shadow: 0 0 8px #ff4141;
         color: #ff4141;
@@ -368,7 +368,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['access_password'])) {
     <?php else: ?>
     <form id="downloadForm" novalidate>
         <label for="drive_link">TARGET FILE URL:</label>
-        <input type="text" name="drive_link" id="drive_link" placeholder="https://drive.google.com/file/d/FILE_ID/..." required autofocus aria-invalid="false" />
+        <input type="url" name="drive_link" id="drive_link" placeholder="https://drive.google.com/file/d/FILE_ID/..." required autofocus aria-invalid="false" />
         <br/>
         <button type="submit" id="submitBtn">[INITIATE DOWNLOAD]</button>
     </form>
